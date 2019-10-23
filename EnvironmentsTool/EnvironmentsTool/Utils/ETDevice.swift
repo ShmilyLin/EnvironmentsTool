@@ -140,25 +140,25 @@ class ETDevice: NSObject {
 //        print("output", output)
         
         let tempDocument = try! XMLDocument(xmlString: output)
-        print("tempDocument.childCount", tempDocument.childCount)
+//        print("tempDocument.childCount", tempDocument.childCount)
         
         if tempDocument.childCount == 1 {
             let tempRootNode = tempDocument.children![0]
-            print("tempRootNode.childCount", tempRootNode.childCount)
+//            print("tempRootNode.childCount", tempRootNode.childCount)
             if tempRootNode.childCount == 1 {
                 let tempRootListNode = tempRootNode.children![0]
-                print("tempRootListNode.childCount", tempRootListNode.childCount)
+//                print("tempRootListNode.childCount", tempRootListNode.childCount)
                 if tempRootListNode.childCount > 0 {
                     for tempDictItem in tempRootListNode.children! {
-                        print("tempDictItem.childCount", tempDictItem.childCount)
+//                        print("tempDictItem.childCount", tempDictItem.childCount)
                         if tempDictItem.childCount > 0 {
                             for tempDictSubItem in tempDictItem.children! {
                                 if tempDictSubItem.name == "key" && tempDictSubItem.stringValue == "_items" {
                                     if let tempDictSubItem_items = tempDictSubItem.nextSibling, tempDictSubItem_items.childCount > 0 {
-                                        print("tempDictSubItem_items.childCount", tempDictSubItem_items.childCount)
+//                                        print("tempDictSubItem_items.childCount", tempDictSubItem_items.childCount)
                                         for tempDictSubItem_items_item in tempDictSubItem_items.children! {
                                             if tempDictSubItem_items_item.name == "dict" && tempDictSubItem_items_item.childCount > 0 {
-                                                print("tempDictSubItem_items_item.childCount", tempDictSubItem_items_item.childCount)
+//                                                print("tempDictSubItem_items_item.childCount", tempDictSubItem_items_item.childCount)
                                                 for tempDictSubItem_items_item_node in tempDictSubItem_items_item.children! {
                                                     // 机器
                                                     if tempDictSubItem_items_item_node.name == "key" && tempDictSubItem_items_item_node.stringValue == "machine_model" {
